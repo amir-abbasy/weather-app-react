@@ -43,8 +43,8 @@ export default function Index() {
   };
 
   return (
-    <main className="bg-[#1f1f1f] w-full h-[100vh] flex pt-16 px-[4%] gap-16">
-      <div className="h-[50vh] bg-red-300d flex-1">
+    <main className="bg-[#1f1f1f] w-full xl:h-[100vh] xl:flex pt-16 px-[4%] xl:gap-16">
+      <div className="xl:h-[50vh] bg-red-300d xl:flex-1">
         <DaysTab
           onChange={(day) => setState((prev) => ({ ...prev, day }))}
           selectedDate={state.day}
@@ -52,7 +52,7 @@ export default function Index() {
         {state?.data && (
           <section className="relative">
             <Card data={state?.data} />
-            <div className="flex">
+            <div className="hidden xl:flex">
               <div className="w-[50%]" />
               <div className="w-[50%] flex flex-col pl-8">
                 <div className="m-8">
@@ -68,10 +68,10 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="w-[60vw] h-[50vh] bg-gradient-to-l from-[#282828] from-40% to-transparent rounded-[50px]">
+            <div className="xl:w-[60vw] xl:h-[50vh] bg-gradient-to-l from-[#282828] from-40% to-transparent rounded-[50px]  mt-40 xl:mt-0 overflow-clip">
               <div className="flex">
-                <div className="h-[30vh] bg-red-60s0 w-[50%]" />
-                <div className="h-[30vh] bg-yellow-6s00 w-[50%]">
+                <div className="xl:h-[30vh] bg-red-60s0 xl:w-[50%]" />
+                <div className="xl:h-[30vh] bg-yellow-6s00 xl:w-[50%]">
                   <div className="flex gap-6 items-center justify-center flex-wrap p-10">
                     <WeatherMain data={state.data} />
                   </div>
@@ -100,7 +100,7 @@ export default function Index() {
           }
         }}
         error={state?.error}
-      />
+      /> 
     </main>
   );
 }

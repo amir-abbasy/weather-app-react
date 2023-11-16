@@ -4,7 +4,7 @@ import {getFormattedDate, getNext7Days} from '../utils/Helper'
 export default function DaysTab({ onChange, selectedDate  }) {
 const sevenDays = getNext7Days();
   return (
-    <div className="flex  mb-20 gap-10">
+    <div className="xl:flex  mb-20 gap-10">
       {sevenDays.map((item, key) => (
         <div
           key={"days_" + key}

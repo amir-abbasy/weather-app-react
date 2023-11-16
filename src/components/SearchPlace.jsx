@@ -48,7 +48,7 @@ export default function SearchPlace({ onSearch, error }) {
   };
 
   return (
-    <div className="w-[60vw] h-[70vh] bg-gradient-to-t from-[#282828] from-40% to-transparent rounded-[50px] mt-[8vh] overflow-y-scroll">
+    <div className="xl:w-[60vw] xl:h-[70vh] bg-gradient-to-t from-[#282828] from-40% to-transparent rounded-[50px] mt-[8vh] overflow-y-scroll">
       <div className="flex h-12 bg-[#282828] rounded-full m-4 overflow-hidden">
         <input
           className="flex-1 bg-[#282828] pl-4 outline-none text-xl text-white"

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Card({ width = 300, data }) {
   return (
-    <div className="absolute z-50 scale-125 translate-x-20">
+    <div className="xl:absolute z-50 xl:scale-125 xl:translate-x-20 flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="308px" height="281px">
         <defs>
           <linearGradient
