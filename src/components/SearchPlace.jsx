@@ -79,7 +79,7 @@ export default function SearchPlace({ onSearch, error }) {
       {/* LIST */}
       {!search && recentPlaces.length > 0 ? (
         <div className="p-8 text-white ">
-          <p className="text-2xl my-8">Recent seach places</p>
+          <p className="text-2xl my-8">Recent search history</p>
           {recentPlaces.reverse().map((place, plKey) => (
             <div
               className="hover:bg-[#282828] cursor-pointer p-3 rounded-2xl"

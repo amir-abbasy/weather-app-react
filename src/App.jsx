@@ -52,9 +52,9 @@ export default function Index() {
         {state?.data && (
           <section className="relative">
             <Card data={state?.data} />
-            <div className="hidden xl:flex">
-              <div className="w-[50%]" />
-              <div className="w-[50%] flex flex-col pl-8">
+            <div className="flex">
+              <div className="xl:w-[50%]" />
+              <div className="xl:w-[50%] flex flex-col pl-8 mt-20 xl:mt-0">
                 <div className="m-8">
                   <h1 className="text-3xl text-white tracking-widest">
                     {state.data?.name}
