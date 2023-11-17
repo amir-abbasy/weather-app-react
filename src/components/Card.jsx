@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function Card({ width = 300, data }) {
+  const D = "M45.459,0.010 L261.621,0.010 C286.709,0.010 307.046,20.382 307.046,45.513 L307.046,207.909 C307.046,233.039 286.709,253.412 261.621,253.412 L45.459,280.870 C20.372,280.870 0.034,260.498 0.034,235.367 L0.034,45.513 C0.034,20.382 20.372,0.010 45.459,0.010 Z"
+
   return (
     <div className="xl:absolute z-50 xl:scale-125 xl:translate-x-20 flex items-center justify-center">
       <svg xmlns="http://www.w3.org/2000/svg" width="308px" height="281px">
@@ -20,10 +22,10 @@ export default function Card({ width = 300, data }) {
         <path
           fillRule="evenodd"
           fill="url(#PSgrad_0)"
-          d="M45.459,0.010 L261.621,0.010 C286.709,0.010 307.046,20.382 307.046,45.513 L307.046,207.909 C307.046,233.039 286.709,253.412 261.621,253.412 L45.459,280.870 C20.372,280.870 0.034,260.498 0.034,235.367 L0.034,45.513 C0.034,20.382 20.372,0.010 45.459,0.010 Z"
+          d={D}
         />
       </svg>
-      <div className="absolute top-0 w-[308px]">
+      <div className="absolute top-0 w-[308px] ">
         <div className="flex flex-col justify-center items-center bg-redx-400 py-4">
           <p className="text-2xl text-white">{data?.weather?.[0]?.["main"]}</p>
           <p className="text-base text-white">
@@ -36,11 +38,31 @@ export default function Card({ width = 300, data }) {
             </h1>
           </div>
           <img
-            src={`/icons/${data?.weather?.[0]?.["icon"].replace('n', 'd')}.png`}
-            className="w-[200px]"
+            src={`/icons/${data?.weather?.[0]?.["icon"].replace("n", "d")}.png`}
+            className="w-[200px] z-50"
           />
         </div>
       </div>
+      <svg xmlns="http://www.w3.org/2000/svg" width="308px" height="281px" className="absolute">
+        <defs>
+          <linearGradient
+            id="PSgrad_1"
+            x1="0%"
+            x2="51.504%"
+            y1="0%"
+            y2="85.717%"
+          >
+            <stop offset="60%" stopColor="rgba(251,98,228)" stopOpacity=".1" />
+            <stop offset="80%" stopColor="rgba(148,99,235)" stopOpacity=".5" />
+            <stop offset="100%" stopColor="rgba(51,98,239)" stopOpacity="1" />
+          </linearGradient>
+        </defs>
+        <path
+          fillRule="evenodd"
+          fill="url(#PSgrad_1)"
+          d={D}
+        />
+      </svg>
     </div>
   );
 }

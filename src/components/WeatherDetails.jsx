@@ -4,7 +4,7 @@ export default function WeatherDetails({ data }) {
   return (
     <div className="flex flex-wrap justify-start items-start">
       {Object.entries(data).map((item, key) => {
-        if (item[0] == "weather") return;
+        if (["weather","times"].includes(item[0])) return;
         const child = (child) => {
           if (typeof child == "object") {
             return (

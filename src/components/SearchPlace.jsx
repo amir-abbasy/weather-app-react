@@ -17,14 +17,14 @@ export default function SearchPlace({ onSearch, error }) {
   const search_place = (place, save = true) => {
     setLoading(true);
     api
-      .get(`/weather?city=${place}`)
+      // .get(`/weather?city=${place}`)
+      .get(`/future-weather?city=${place}`)
       .then((res) => {
         if (res.status) {
           setSearch();
           onSearch(res.data);
-          console.log("weather--------->", res);
+          // console.log("weather--------->", res);
           // Save to localstorage
-
           if (save) {
             var newSearchPlace = [
               { name: search, date: new Date().toLocaleString() },
@@ -49,15 +49,15 @@ export default function SearchPlace({ onSearch, error }) {
 
   return (
     <div className="xl:w-[60vw] xl:h-[70vh] bg-gradient-to-t from-[#282828] from-40% to-transparent rounded-[50px] mt-[8vh] overflow-y-scroll">
-      <div className="flex h-12 bg-[#282828] rounded-full m-4 overflow-hidden">
+      <div className="xl:flex xl:h-12 bg-[#282828] xl:rounded-full m-4 xl:overflow-hidden justify-between">
         <input
-          className="flex-1 bg-[#282828] pl-4 outline-none text-xl text-white"
+          className=" bg-[#282828] h-16 xl:h-auto pl-6 outline-none text-xl text-white"
           placeholder="Search city"
           onChange={(e) => setSearch(e.target.value)}
           value={search ?? ""}
         />
         <div
-          className="bg-gradient-to-l from-[#3362ef] via-[#9463eb] to-[#fb62e4] rounded-full  px-8 flex items-center cursor-pointer"
+          className="h-12  bg-gradient-to-l from-[#3362ef] via-[#9463eb] to-[#fb62e4] rounded-full  px-8 flex items-center cursor-pointer"
           onClick={() => search_place(search)}
         >
           <span
